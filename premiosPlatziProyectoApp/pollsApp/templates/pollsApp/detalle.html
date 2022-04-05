@@ -1,0 +1,6 @@
+<h1> {{pregunta.pregunta_text}}</h1>
+    <ul>
+        {% for respuesta in pregunta.respuesta_set.all  %}
+            <li>{{respuesta.respuest_text}}</li>
+        {% endfor %}
+    </ul>

@@ -1,0 +1,10 @@
+{% if lates_respuesta_list %}
+<ul>
+    {% for pregunta in lates_respuesta_list %}
+       <!--<li><a href="/pollsApp/{{pregunta.id}}">{{pregunta.pregunta_text}} </a></li>--> 
+       <li><a href="{% url 'polls:detalle' pregunta.id %}">{{pregunta.pregunta_text}} </a></li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No hay atributos</p>
+{% endif %}
