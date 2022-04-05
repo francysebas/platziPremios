@@ -6,7 +6,8 @@
     </ul> 
 --> 
 
-<forms action="{% url 'polls:voto' pregunta.id %}"  method="post">
+<form action="{% url 'polls:voto' pregunta.id %}"  method="post">
+
     {% csrf_token %}
     <fieldset>
         <legend> <h1>{{pregunta.pregunta_text}}</h1></legend>
@@ -28,4 +29,4 @@
     </fieldset>
     
     <input type="submit" value="Votar">
-</foms>
+</form>
