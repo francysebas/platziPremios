@@ -1,10 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pollsApp/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'pollsApp/style.css' %}">
+    <title>Premios Platzi App</title>
+</head>
+<body>
+    <header >
+        <h1>Premios platzi app</h1>
+    </header>
+    <main>
+        {% if lates_respuesta_list %}
+        <ul>
+            {% for pregunta in lates_respuesta_list %}
+      
+                <li><a href="{% url 'polls:detalle' pregunta.id %}">{{pregunta.pregunta_text}} </a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No hay atributos</p>
+        {% endif %}
+    </main>
+    
+</body>
+<footer>
+    <a href="http://platzi.com">Platzi</a>
+    <a href="#">Contacto</a>
+    <a href="#">¿Quieres ser profe?</a>
+    <a href="#">Politicas de privacidad</a>
+    <a href="#">Terminos y condiciones</a>
+</footer>
+</html>
+
+<!--{% load static %}
+<link rel="stylesheet" href="{% static 'pollsApp/style.css' %}">
+
 {% if lates_respuesta_list %}
 <ul>
     {% for pregunta in lates_respuesta_list %}
-       <!--<li><a href="/pollsApp/{{pregunta.id}}">{{pregunta.pregunta_text}} </a></li>--> 
+      
        <li><a href="{% url 'polls:detalle' pregunta.id %}">{{pregunta.pregunta_text}} </a></li>
-    {% endfor %}
+   {% endfor %}
 </ul>
 {% else %}
     <p>No hay atributos</p>
-{% endif %}
+{% endif %}-->

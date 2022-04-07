@@ -34,6 +34,7 @@ class IndexView(ListView):
     context_object_name = "lates_respuesta_list"
 
     def get_queryset(self):
+        # return Pregunta.objects.filter(published_date__lte=timezone.now()).order_by( "-publicacion_fecha")[:5]
         return Pregunta.objects.order_by("-publicacion_fecha")[:5]
 
 
